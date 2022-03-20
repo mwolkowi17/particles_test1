@@ -37,7 +37,8 @@ import * as THREE from 'three';
 				const sprite4 = textureLoader.load( '/snowflake4.png' );
 				const sprite5 = textureLoader.load( '/snowflake5.png' );
 
-				for ( let i = 0; i < 10000; i ++ ) {
+				//for ( let i = 0; i < 10000; i ++ ) {
+			    for ( let i = 0; i < 500; i ++ ) {
 
 					const x = Math.random() * 2000 - 1000;
 					const y = Math.random() * 2000 - 1000;
@@ -57,8 +58,8 @@ import * as THREE from 'three';
 					[[ 0.80, 0, 0.5 ], sprite4, 5 ]
 				];
 
-				for ( let i = 0; i < parameters.length; i ++ ) {
-
+				//for ( let i = 0; i < parameters.length; i ++ ) {
+				for ( let i = 0; i < 2; i ++ ) {
 					const color = parameters[ i ][ 0 ];
 					const sprite = parameters[ i ][ 1 ];
 					const size = parameters[ i ][ 2 ];
@@ -86,10 +87,10 @@ import * as THREE from 'three';
 				//
 
 				stats = new Stats();
-				document.body.appendChild( stats.dom );
+				//document.body.appendChild( stats.dom );
 
 				//
-
+/*
 				const gui = new GUI();
 
 				const params = {
@@ -108,7 +109,7 @@ import * as THREE from 'three';
 				} );
 
 				gui.open();
-
+*/
 				document.body.style.touchAction = 'none';
 				document.body.addEventListener( 'pointermove', onPointerMove );
 
@@ -154,8 +155,10 @@ import * as THREE from 'three';
 
 				const time = Date.now() * 0.00005;
 
-				camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-				camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+				//camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+				//camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+				camera.position.x += ( mouseX - camera.position.x ) * 0.5;
+				camera.position.y += ( - mouseY - camera.position.y ) * 0.5;
 
 				camera.lookAt( scene.position );
 
@@ -165,7 +168,7 @@ import * as THREE from 'three';
 
 					if ( object instanceof THREE.Points ) {
 
-						object.rotation.y = time * ( i < 4 ? i + 1 : - ( i + 1 ) );
+						object.rotation.y = time * ( i < 4 ? i + 2 : - ( i + 2 ) );
 
 					}
 
